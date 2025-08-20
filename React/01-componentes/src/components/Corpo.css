@@ -1,0 +1,8 @@
+.corpo-container {
+    background-color: aqua;
+    min-height: calc(100vh - 70px);
+}
+
+.imagem-corpo{
+    width: 100px;
+}
