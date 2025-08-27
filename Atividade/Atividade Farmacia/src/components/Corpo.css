@@ -1,0 +1,29 @@
+.corpo-container {
+    background-color: #ce1f3a;;
+    min-height: calc(100vh - 70px);
+    padding-top: 20px;
+}
+
+.imagem-corpo{
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+.teste{
+border-radius: 30px;
+background-color: #ffffff;
+max-width: 400px;
+margin: 25px auto;
+}
+
+
+.teste1{
+    border-radius: 30px;
+    background-color: #ffffff;
+    max-width: 900px;
+    margin: 25px auto;
+    }
