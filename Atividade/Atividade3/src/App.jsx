@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import InputField from "./components/Input";
-import ResultCard from "./components/Card";
-import PriceConfig from "./components/Price";
+import Input from "./components/Input";
+import Card from "./components/Card";
+import Price from "./components/Price";
 
 function App() {
   const [altura, setAltura] = useState(0);
@@ -21,25 +21,25 @@ function App() {
       <h1>Calculadora de Orçamento - Grades Cida</h1>
 
       <div className="form-box">
-        <InputField
+        <Input
           label="Altura da grade (m)"
           value={altura}
           onChange={setAltura}
         />
-        <InputField
+        <Input
           label="Largura do terreno (m)"
           value={largura}
           onChange={setLargura}
         />
-        <InputField
+        <Input
           label="Comprimento do terreno (m)"
           value={comprimento}
           onChange={setComprimento}
         />
 
-        <PriceConfig precoBase={precoBase} setPrecoBase={setPrecoBase} />
+        <Price precoBase={precoBase} setPrecoBase={setPrecoBase} />
 
-        <ResultCard valor={calcularOrcamento()} />
+        <Card valor={calcularOrcamento()} />
       </div>
     </div>
   );

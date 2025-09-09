@@ -2,7 +2,7 @@ import "./Card.css";
 
 function Card({ valor }) {
   return (
-    <div className="result-card">
+    <div className="card">
       <h2>Orçamento:</h2>
       <p>R$ {valor.toFixed(2)}</p>
     </div>

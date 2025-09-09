@@ -2,7 +2,7 @@ import "./Input.css";
 
 function Input({ label, value, onChange }) {
   return (
-    <div className="input-field">
+    <div className="input">
       <label>{label}</label>
       <input
         type="number"

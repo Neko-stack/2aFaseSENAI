@@ -1,0 +1,39 @@
+.price {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.price label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.price-input {
+  display: flex;
+  gap: 8px;
+}
+
+.price-input input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.price-input button {
+  background: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.price-input button:hover {
+  background: #303f9f;
+}
