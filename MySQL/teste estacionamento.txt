@@ -1,0 +1,96 @@
+-- 🧱 Cria o banco de dados e o seleciona
+CREATE DATABASE estacionamento;
+USE estacionamento;
+
+-- 👤 Tabela de clientes
+CREATE TABLE cliente(
+  id_cliente INT NOT NULL AUTO_INCREMENT PRIMARY KEY, -- Identificador único
+  nome VARCHAR(50),                                   -- Nome do cliente
+  dt_nascimento DATE                                  -- Data de nascimento
+);
+
+-- 🚗 Categorias de veículos
+CREATE TABLE categoria(
+  id_categoria INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(50),
+  descricao VARCHAR(100)
+);
+
+-- 🚙 Tabela de veículos (ligada a cliente e categoria)
+CREATE TABLE veiculo(
+  id_veiculo INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  placa VARCHAR(8),
+  cor VARCHAR(20),
+  id_cliente INT,           -- FK -> cliente
+  id_categoria INT,         -- FK -> categoria
+  FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente),
+  FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
+);
+
+-- 🅿️ Registro das entradas e saídas no estacionamento
+CREATE TABLE estacionamento(
+  id_estacionamento INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(50),
+  capacidade INT,
+  dt_entrada DATE,
+  dt_saida DATE,
+  hs_entrada TIME,
+  hs_saida TIME,
+  veiculo_id INT,           -- FK -> veiculo
+  FOREIGN KEY (veiculo_id) REFERENCES veiculo(id_veiculo)
+);
+
+-- Inserindo dados iniciais
+INSERT INTO cliente(nome, dt_nascimento) VALUES
+('Gabriel','2000-01-20'),
+('João', '2004-04-23'),
+('Maria', '1998-08-10');
+
+INSERT INTO categoria (nome, descricao) VALUES
+('Utilitário', 'Veículo 1'),
+('Van', 'Veículo 2'),
+('Pick-up', 'Veículo 3');
+
+INSERT INTO veiculo(placa, cor, id_cliente, id_categoria) VALUES
+('AAA-1111', 'Preto', 1, 2),
+('BBB-2222', 'Vermelho', 2, 1),
+('CCC-3333', 'Cinza', 1, 2),
+('DDD-4444', 'Azul', 3, 3);
+
+-- Veículo sem dono (para testar LEFT JOIN)
+INSERT INTO veiculo(placa, cor) VALUES
+('EEE-5555', 'Preto');
+
+-- INNER JOIN → mostra apenas quem tem correspondência em todas as tabelas
+SELECT v.id_veiculo, v.placa, v.cor, cl.nome AS cliente, cat.nome AS categoria
+FROM veiculo v
+INNER JOIN cliente cl ON v.id_cliente = cl.id_cliente
+INNER JOIN categoria cat ON v.id_categoria = cat.id_categoria;
+
+-- LEFT JOIN → mostra todos os veículos, mesmo sem cliente
+SELECT v.id_veiculo, v.placa, v.cor, cl.nome AS cliente 
+FROM veiculo v
+LEFT JOIN cliente cl ON v.id_cliente = cl.id_cliente;
+
+-- RIGHT JOIN → mostra todas as categorias, mesmo sem veículo
+SELECT v.id_veiculo, v.placa, v.cor, cat.nome AS categoria 
+FROM veiculo v
+RIGHT JOIN categoria cat ON v.id_categoria = cat.id_categoria;
+
+-- UNION → combina LEFT e RIGHT JOIN (sem duplicar linhas)
+SELECT v.id_veiculo, v.placa, v.cor, cl.nome AS cliente 
+FROM veiculo v
+LEFT JOIN cliente cl ON v.id_cliente = cl.id_cliente
+UNION
+SELECT v.id_veiculo, v.placa, v.cor, cat.nome AS categoria 
+FROM veiculo v
+RIGHT JOIN categoria cat ON v.id_categoria = cat.id_categoria;
+
+-- VIEW → cria uma “consulta pronta” que pode ser chamada depois
+CREATE VIEW vw_veiculo_cliente AS
+SELECT v.id_veiculo, v.placa AS placa_registrada, v.cor, cl.nome AS nome_do_cliente
+FROM veiculo v
+INNER JOIN cliente cl ON v.id_cliente = cl.id_cliente;
+
+-- Teste da VIEW
+SELECT * FROM vw_veiculo_cliente;
