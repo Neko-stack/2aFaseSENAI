@@ -1,0 +1,15 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    background-color: gray;
+    border-radius: 10px;
+    border-width: 100px;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+
