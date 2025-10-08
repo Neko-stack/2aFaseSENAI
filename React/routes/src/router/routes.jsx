@@ -1,16 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
-import Pagina1 from "../pages/Pagina1";
-import Pagina2 from "../pages/Pagina2";
-import Pagina3 from "../pages/Pagina3";
-import Produtos from "../pages/Produtos";
+import Material from "../pages/Material";
+import Bar from "../pages/Bar";
+import Sorveteria from "../pages/Sorveteria";
 
 const router = createBrowserRouter([
     {path: '/', element: <Home/> },
-    {path: '/pagina1', element: <Pagina1/> },
-    {path: '/pagina2', element: <Pagina2/> },
-    {path: '/pagina3', element: <Pagina3/> },
-    {path: '/produtos', element: <Produtos/> }
+    {path: '/material', element: <Material/> },
+    {path: '/bar', element: <Bar/> },
+    {path: '/sorveteria', element: <Sorveteria/> }
 ])
 
 export default router
