@@ -1,9 +1,96 @@
-p{
-justify-content: center;
-text-align: center;
+.home-container {
+  max-width: 1300px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+  min-height: 80vh;
 
+ 
 }
 
-body{
-    background-color:lightcyan;
+.home-container h1 {
+  color: #512da8;
+  margin-bottom: 50px;
+  font-size: 2.2rem;
+  text-align: center;
+  align-self: flex-start; 
+  width: 100%;
 }
+
+.home-container p {
+  font-size: 1.1rem;
+  color: #000000;
+  margin-bottom: 60px;
+  font-size: large;
+}
+
+
+.cards-home {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  width: 100%;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.card-home {
+  background: #fafafa;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+
+
+
+.card-home h2 {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.card-home p {
+    font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+  text-align: center;
+  max-width: 800px;
+}
+
+
+.btn-home {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+
+.card-home.material .btn-home {
+  background: linear-gradient(90deg, #7e57c2, #673ab7);
+}
+
+.card-home.bar .btn-home {
+  background: linear-gradient(90deg, #6a1b9a, #9c27b0);
+}
+
+.card-home.sorveteria .btn-home {
+  background: linear-gradient(90deg, #f06292, #ec407a);
+}
+

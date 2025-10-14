@@ -1,14 +1,25 @@
 .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    border-radius: 20px;
-    background-color: rgb(162, 24, 231);
-    height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #7b1fa2, #9c27b0);
+  height: 50px;
+  color: white;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.navba .nav-link {
-    color: black;
-    text-decoration: none;
+.navbar a {
+  color: #fff;
+  padding: 5px 10px;
+  transition: 0.3s;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }

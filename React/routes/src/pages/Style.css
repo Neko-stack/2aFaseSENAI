@@ -1,0 +1,70 @@
+body {
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+}
+
+.container h1 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.container p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* ======= TABELAS ======= */
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tabela th,
+.tabela td {
+  padding: 14px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.tabela thead {
+  color: #fff;
+}
+
+.tabela tbody tr:nth-child(even) {
+  background: #f6f6f6;
+}
+
+.tabela tbody tr:hover {
+  background: #f1f1f1;
+  transition: 0.2s;
+}
+
+/* ======= CORES POR SEÇÃO ======= */
+.material thead {
+  background: linear-gradient(90deg, #7e57c2, #673ab7);
+}
+
+.bar thead {
+  background: linear-gradient(90deg, #6a1b9a, #9c27b0);
+}
+
+.sorveteria thead {
+  background: linear-gradient(90deg, #f06292, #ec407a);
+}
